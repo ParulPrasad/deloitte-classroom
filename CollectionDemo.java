@@ -44,6 +44,9 @@ public class CollectionDemo {
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
+		
+		items1.forEach((item)->System.out.println(item));
+		items1.forEach(System.out::println);
 
 	}
 
