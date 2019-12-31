@@ -1,46 +1,57 @@
 package com.deloitte;
+import java.util.*;
+import java.lang.String;
+public class Employee implements Comparable<Employee> {
+	private int empId;
+	private double sal;
+	private String empName;
+	
 
-public class Employee {
-    private int empId;
-    private String empName;
-    private float sal;
-    
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", sal=" + sal + ", empName=" + empName + "]";
+	}
+
+
 	public int getEmpId() {
 		return empId;
 	}
+
 
 	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 
+
+	public double getSal() {
+		return sal;
+	}
+
+
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+
+
 	public String getEmpName() {
 		return empName;
 	}
+
 
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
 
-	public float getSal() {
-		return sal;
-	}
 
-	public void setSal(float sal) {
+	public Employee(int empId, double sal, String empName) {
+		super();
+		this.empId = empId;
 		this.sal = sal;
+		this.empName = empName;
 	}
-	 public Employee() {
-		 
-	 }
-	  public Employee(int empId,String empName,float sal) {
-		  super();
-		  this.empId=empId;
-		  this.empName=empName;
-		  this.sal=sal;
-	  }
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+    @Override
+    public int compareTo(Employee o)
+    {
+    	return (int)(this.sal-o.sal);
+    }
 }
