@@ -1,3 +1,4 @@
+
 package com.deloitte;
 import java.util.*;
 public class mapDemo {
@@ -18,6 +19,7 @@ public class mapDemo {
 			 System.out.println("name : "+key+"\t\tlocation : "+trainees.get(key));
 			 }
 		 
+		trainees.forEach((k,v)->System.out.println("name : "+k+"\tlocation : "+v));
 		 
 
 	}
