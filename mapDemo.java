@@ -9,9 +9,16 @@ public class mapDemo {
 		trainees.put("nishitha", "AP");
 		trainees.put("tejaswini", "AP");
 		System.out.println(trainees.get("parul"));
+		
 		 System.out.println("enter name:");
 		 String name=new Scanner(System.in).nextLine();
 		 System.out.println("location: "+trainees.get(name));
+		 
+		 for(String key:trainees.keySet()) {
+			 System.out.println("name : "+key+"\t\tlocation : "+trainees.get(key));
+			 }
+		 
+		 
 
 	}
 
