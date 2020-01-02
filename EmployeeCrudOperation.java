@@ -1,5 +1,6 @@
 package com.deloitte;
 import java.sql.*;
+import java.util.*;
 
 public class EmployeeCrudOperation {
 
@@ -19,6 +20,7 @@ public class EmployeeCrudOperation {
 		 * 
 		 * 
 		 */
+		Scanner sc=new Scanner(System.in);
 		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
 		
 		if(con!=null) {
@@ -26,11 +28,16 @@ public class EmployeeCrudOperation {
 		}
 		
 		Statement smt=con.createStatement();
-		ResultSet rs=smt.executeQuery("select * from employee");
-		System.out.println("EmpId  EmpNames");
+		 
+		 ResultSet rs=smt.executeQuery("insert into employee values("+sc.nextInt()+",'"+sc.next()+"','"+sc.next()+"','"+sc.next()+"',"+sc.nextInt()+","+sc.nextInt()+","+sc.nextInt()+","+sc.nextInt()+")");
+		 rs=smt.executeQuery("select * from employee");
+		 System.out.println("EmpId  EmpNames");
+		
 		while(rs.next()) {
 			System.out.println(rs.getInt(1)+"   "+rs.getString(2));
 		}
+		con.close();
+		
 	}
 
 }
