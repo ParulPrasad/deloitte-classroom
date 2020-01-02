@@ -6,7 +6,7 @@ public class FileOperDemo {
 		try {
 			File file=new File("hello.txt");
 			FileInputStream fin=new FileInputStream(file); //Byte Oriented
-			FileReader finr=new FileReader(file);
+			FileReader finr=new FileReader(file);          //Char oriented
 			int c;
 			System.out.println("using byte oriented");
 			while((c=fin.read())!=-1) {
